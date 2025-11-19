@@ -7,3 +7,41 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Cleaning database..."
+Restaurant.destroy_all
+
+puts "Creating restaurants..."
+
+# categories = ["chinese", "italian", "japanese", "french", "belgian"]
+
+Restaurant.create!([{
+  name: "chinese Restaurant ",
+  address: "#{rand(1..2000)} Street, Montreal",
+  phone_number: "1 - #{rand(100..999)} #{rand(1000..9999)}",
+  category: "chinese"
+},
+{
+  name: "italian Restaurant ",
+  address: "#{rand(1..2000)} Street, Montreal",
+  phone_number: "1 - #{rand(100..999)} #{rand(1000..9999)}",
+  category: "italian"
+},
+{
+  name: "japanese Restaurant ",
+  address: "#{rand(1..2000)} Street, Montreal",
+  phone_number: "1 - #{rand(100..999)} #{rand(1000..9999)}",
+  category: "japanese"
+},
+{
+  name: "french Restaurant ",
+  address: "#{rand(1..2000)} Street, Montreal",
+  phone_number: "1 - #{rand(100..999)} #{rand(1000..9999)}",
+  category: "french"
+},
+{
+  name: "belgian Restaurant ",
+  address: "#{rand(1..2000)} Street, Montreal",
+  phone_number: "1 - #{rand(100..999)} #{rand(1000..9999)}",
+  category: "belgian"
+}])
+puts "Finished! Created #{Restaurant.count} restaurants."
